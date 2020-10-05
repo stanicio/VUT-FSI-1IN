@@ -1,0 +1,142 @@
+
+%pozor v MATLAB se pouziva "." jeko desetina čárka/tečka
+
+*****************************
+strana: 1 / 3
+*****************************
+clc 		%smaze prikazove okno
+clear 		%smaze vsechny promenne z workspace
+clear all 	%totez co predchozi, ale prehlednejsi
+
+%potlaceni vystupu pomoci stredniku
+a=10
+A=11;
+
+%je pouzita "konstanta" pi
+b=a/2+sin(pi/2) %vypocte vyraz a priradi vysledek do promenne "b"
+
+%mocnina
+a=b^2
+
+%aritmeticke vyrazy
+x=5, y=2
+x+y, x-y, x^2, x/y
+x\y 	%deleni zprava
+
+% vypis promennych normalni a rozsireny
+who
+whos
+
+clear 		%smaze vsechny promenne
+clear all 	% totez co predchozi
+clear x y 	%smaze konkretne uvedene promenne
+
+%vektory
+a=[15] 		%jednoprvkova promenna
+b=[0,1,2,3,4,5]	%vektor čísel s prvky 0-5 (6 prvků)
+
+%: zadani sekvenci hodnot do promene jako vektor s urcenym krokem
+b=[0:5] 	%defaultni krok je 1
+t=[0:0.1:1]	%krok je 0.1  !!!
+
+%plot vykresleni grafu, zde priklad v 2D
+x=[0:7];  	%nachystame si vektor hodnot osy x
+y=sin(x);	%spocitame si funkcni hodnoty osy y pro kazde x	
+plot(x,y)	%vykreslime si 2D graf uplne obycejne
+whos x		%zjistime si jak vypada promenna x
+
+%help
+help plot	%vypsani zkracene napovedy pro funkci plot
+
+
+
+*****************************
+strana: 1 / 4
+*****************************
+%priklad na vypocet prace s kamenem
+
+clc
+clear all
+close all  	%zavre vsechny figure (zde nase pripadne otevrene grafy)
+
+a=10; c=5;  	%nachystame si pocatecny hodnoty
+m=1;		%nachystame si pocatecny hodnoty
+g=9.81; 	%plati pro zemi, pro mesic delit 6
+W=m*g*(a+c)  	%vypocteme si praci
+
+%%     
+%dve procenta oddeli kod na sekce a kod se muze spoustet po castech
+a=[0,5,10,20]; 	% pro 4 ruzne pocatecni body A
+
+%promenna "a" je ted vektor 4 vstupnich hodnot
+W=m*g*(a+c)	%spocitame praci pro vsechny pocatecni body naraz
+%plot(a,W)	%vykreslime si graf 2D (zakomentovano)
+
+%vykreslime si graf s body cevenou carou
+plot(a,W,'r-x') % '--' nebo ':' nebo '-.'
+
+
+*****************************
+strana: 1 / 5
+*****************************
+%zavazi na pruzine
+
+%PRIKLAD T01_03
+
+clc
+clear all
+close all
+%%
+
+
+t=0:0.01:0.5; 	%nachystame si casovou osu v rozmei 0-0.5 s krokem 0.01s
+T=0.4; 		%zadana perioda
+f=1/T, A=2; 	%vypocet frekvence a zadani hmotnosti
+fi=pi/2; 	%nastavime si pocatecni uhel
+y=A*sin(2*pi*f*t+fi); 	%vypoctemefunkcni hodnotu y pro kazdy bod t
+plot(t,y,'--') 	%vykreslime 2D graf kdy x osa je vektor t
+grid on 	%zapne mrizku na grafu (grid off ji vypina)
+title('graf sin(x)') 	%popis grafu
+xlabel('time'); %popis X osy grafu
+ylabel('A')	%popis Y osy grafu
+
+
+
+
+
+ROZCVICKA na domaci zkouseni, kdyz s tim nehnete poslete co jste udelali a zeptejte se
+Na dalsim cviceni si to rozebereme, co bylo nejasne.
+
+-------------------
+Cvičeníčko: doporucuji udelat samostatne, pouzit napovedu, bude to potreba
+mala napoveda "I spatny vysledek muze byt spravnym vysledkem."
+
+Zdea je vyborny prehled operatoru
+https://www.mathworks.com/help/matlab/matlab_prog/matlab-operators-and-special-characters.html
+
+PDF na zakladni funkce v moodle
+https://moodle.vutbr.cz/pluginfile.php/264576/mod_resource/content/1/MATLAB%20basic%20function%20reference.pdf
+-------------------
+
+Generujte vektor a přirozených čísel od 1 do 10 
+
+------------------
+Generujte vektor b, který bude obsahovat racionální čísla od 1 do 10 s krokem 0.5 
+
+------------------------
+Generujte vektor x1 čísel, která budou druhou mocninou čísel od 1 do 10 
+
+--------------------------
+Generujte vektor x2 čísel, která budou druhou odmocninou čísel od 1 do 10 
+
+-----------------------
+Odečtěte prvky vektoru x2 od vektoru x1 
+
+------------------------
+Odečtěte prvky vektoru b od vektoru a 
+
+-------------------------
+
+
+
+

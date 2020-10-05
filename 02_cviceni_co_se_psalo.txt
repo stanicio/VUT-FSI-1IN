@@ -1,0 +1,124 @@
+clear all
+%operator prirazeni
+x=5; y=2;  %definujeme si hodnoty promennych se kterymi dal pracujeme
+
+%relacni operatory
+x==x  %vyhodnotime, zda promenna x se rovna promenne x :o), bodejt by se nerovnala, kdyz je stejna
+
+%odpoved je logicka hodnota 1, ktera odpovida pravdivosti vyhodnoceni vyrazu
+ans =
+
+  logical
+
+   1
+%vyzkousejte si take tyto dalsi operatory
+%~=  >=  <=  <  >
+
+%logicka hodnota 0 znaci nepravdive vyhodnoceni vyrazu
+
+x==4  %zjistime, zda promenna x se rovna cislu 4 
+
+
+s = x==4  %zjistime, zda se promenna x rovna cislo 4 a ulozime si vysledek do promenne s
+
+
+x>=5  %zjistime, zda jse promenna x vetsi nebo rovna cislu 5
+
+
+x>=6  %zjistime, zda jse promenna x vetsi nebo rovna cislu 5
+
+
+x~=5  %zjistime, zda promenna x se rovna cislu 4 
+
+
+P=[1:6] %vygenerujeme si vektor P s kterym budeme pracovat
+
+P =
+
+     1     2     3     4     5     6
+
+P>3  %ktere prvky vektoru P jsou vetsi nez cislo 3?
+
+ans =
+
+  1×6 logical array
+
+   0   0   0   1   1   1
+
+>> P=[1:3,1:3,1:3] %vygenerujeme si vektor P s 9ti prvky, se kterym budeme pracovat
+
+P =
+
+     1     2     3     1     2     3     1     2     3
+
+
+P==2  %ktere prvky vekrtoru P jsou rovny cislo 2
+
+
+v1=[0:4]  %vygenerujeme si vektor v1
+
+
+v2=linspace(0,4,5)  %vygenerujeme si vektor s linearnim rozdelenim od 0 do 4 v poctu 5ti prvku
+
+
+v2=linspace(0,4,7) %vygenerujeme si vektor s linearnim rozdelenim od 0 do 4 v poctu 7mi prvku
+
+
+v2=linspace(4,0,5) %vygenerujeme si vektor s linearnim rozdelenim od 4 do 0 v poctu 5ti prvku
+
+
+v2=linspace(0,4);  %vygeneruje vektor s linearnim rozdelenim  100 prvku v zadanem rozmezi od 0 do 4
+%100 je defaultni hodnota pokud neni uvedeno jinak
+
+
+
+
+
+%--------------------------------------------------
+%--------------------------------------------------
+
+
+clear all
+%stredniky oddeluji radky
+M=[1 2 3;4 5 6;7 8 9]  %definujeme si matici M o rozmeru 3x3
+
+%takto vypada vypis matice M
+M =
+
+     1     2     3
+     4     5     6
+     7     8     9
+
+a11 = M(1,1)  % ziskani prvku na 1 radku a 1 sloupce matice M
+
+
+a11 = M(2,3) % ziskani prvku na 2 radku a 3 sloupci matice M
+
+
+P=M(3,:) %ziskani vektoru z 3 radku a vsech sloupcu
+
+
+P=M(:,2) %ziskani matice 3x1 ze vsech řádku a sloupce 2 matice M
+
+
+P=M(:,1:2) % ziskani matice za vsech radku a sloupcu 1 AŽ 2
+
+
+P=M(:,1:3) % ziskani matice za vsech radku a sloupcu 1 AŽ 3
+
+
+% kdyz pouzijeme jako parametr vycet prvku [1,3], vystup se zmeni
+P=M(:,[1,3]) % ziskani matice za vsech radku a sloupcu 1 A 3
+
+
+v=(0:4)  %vygenerujeme si vektor o 5ti prvcich
+
+
+v(1:3)  % ziskame novy vektor s prvky poradi 1 AŽ 3 vektoru v
+
+
+v(4:5) % ziskame novy vektor s prvky poradi 4 AŽ 5 vektoru v
+
+
+v(2:end) % ziskame novy vektor s prvky poradi 2 AŽ do konce vektoru v
+
