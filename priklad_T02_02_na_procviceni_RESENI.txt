@@ -1,0 +1,38 @@
+% T02_02
+clear all
+close all
+% trajektorie koncoveho bodu
+L1=1; L2=0.8;
+
+%alfa1 i alfa2 MUSI byt v radianech !!
+
+alfa1=[0:180]*pi/180; %181 kroku
+alfa2=[-90:90]*pi/180; %181 kroku
+%--
+% alfa1=[0:10:180]*pi/180; %pouze 19 kroku
+% alfa2=[-90:10:90]*pi/180; %pouze 19 kroku
+%--
+% alfa1=linspace(0,pi,20); %pouze 20 kroku
+% alfa2=linspace(-pi/2,pi/2,20); %pouze 20 kroku
+%--
+% alfa1=linspace(0,180,15)*pi/180; %pouze 15 kroku
+% alfa2=linspace(-90,90,15)*pi/180; %pouze 15 kroku
+%--
+% alfa1=deg2rad(linspace(0,180,10)); %pouze 10 kroku
+% alfa2=deg2rad(linspace(-90,90,10)); %pouze 10 kroku
+%---
+x2=L1*cos(alfa1)+L2*cos(alfa1+alfa2);
+y2=L1*sin(alfa1)+L2*sin(alfa1+alfa2);
+plot(x2,y2); grid on
+pause(3) %pockame 3 sekundy
+%%
+% přidáme trajektorii spojovacího kloubu
+x1=L1*cos(alfa1);
+y1=L1*sin(alfa1);
+plot(x1,y1,x2,y2); grid on
+%%
+pause(3) 	%pockame 3 sekundy
+
+% rameno v různých fázích pohybu
+plot([x1;x2],[y1;y2],'b');
+grid on
