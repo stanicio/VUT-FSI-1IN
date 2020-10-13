@@ -1,0 +1,32 @@
+%  x +  y = 3
+% -x + 2y = 5
+
+format short % klasicke zobrazeni v kratkem tvaru na 4 desetine mista
+
+%format rational % zobrazeni ve zlomcich, vyzkouset si to
+
+
+
+%vytvorime si matice dle zadanych rovnic, kdy bereme jen cisla u promennych
+%tak jak jsou zadane
+%prvni radek prvni rovnice, druhy radek druha rovnice
+%na KAZDEM radku musi byt uvedeny vsechny promene i kdyby tam nebyly v rovnici uvedene
+%to by tam pak byla nula
+
+
+A=[1 1;-1 2]
+%a vytvorime si matici pravych stran
+b=[3;5]
+
+A\b
+
+%nebo
+
+inv(A)*b
+
+%vystupem jsou hodnoty promennych dle zadani zde tedy:
+%prvni radek je pro x
+%druhy radek je pro y
+
+%pro jistotu, kdy se zapomelo prepnout zpet
+format short % klasicke zobrazeni v kratkem tvaru na 4 desetine mista

@@ -1,0 +1,118 @@
+
+%cviceni 03
+
+%prace s vice okny grafu
+
+figure(1)   	%nastavime si novy figure s indexem 1
+plot([1,2],[1,2]) 	%na aktivni figure vykreslime primku z bodu 1,1 do bodu 2,2
+%pause(2) 	%pauza 2 sekundy   
+%pause  	%pauza, kdy MATLAB ceka na stisk libovolne klavesy treba mezernik
+figure(2)   	%nastavime si novy JINY figure s indexem 2
+plot([1,2],[2,1])  	%na aktivni figure (to je ted 2) vykreslime primku z bodu 1,2 do bodu 2,1
+disp('text k zobrani')  %vypsani zpravy  do prikazoveho okna
+disp(f1)  %vypsani obsah promenne f1 do prikazoveho okna
+
+%PRIORITA operatoru viz obrazek, doporucuji otestovat
+x=5  % 5 do promenne x
+
+-x^2    %mocnina ma prednost
+(-x)^2  %nutnost zmeni poradi vyhodnoceni operatoru pomoci zavorek
+
+
+%prace s ridicimi strukturami 
+
+a=1  %ulozime si do "a" hodnotu 1
+
+%testujeme zda se "a" nerovna 1, zde NE tedy neprovede se prikaz "disp"
+%"a" je totiz 1 vyhodnocovana podminka "a~=1" tak neni pravdiva
+if a~=1 disp('uvnitr if jsem ted'), end 
+
+%testujeme zda se "a" rovna 1, zde ANO tedy provede se prikaz "disp" v tele prikazu IF
+%"a" je totiz 1 vyhodnocovana podminka "a==1" tak je pravdiva
+if a==1 disp('uvnitr if jsem ted'), end
+
+a=2  %ulozime si do a ted hodnotu 2 a spstime stejny kod jako predtim, vysledky budou presne opacne
+
+if a==1 disp('uvnitr if jsem ted'), end   %podminka je vyhodnocena jako NEPRAVDA (0) nic se v tele IF neprovede
+if a~=1 disp('uvnitr if jsem ted'), end  %podminka je vyhodnocena jako PRAVDA (1) tele IF se provede prikaz "disp"
+
+%Vyzkousejte si i jine podminky (<,>,~, <=,...) v ramci vyhodnoceni prikazu IF
+
+
+
+%konstrukce IF ELSE
+rnd=round(rand()*10) %vygenerujem si 1 nahodne cislo v rozsahu 1 az 10
+if rnd/2==round(rnd/2)  %testujeme zda je vygenerovane cislo delitelne 2 jako cele cislo
+    disp('cislo je sude') %pokud je to pravda
+else
+    disp('cislo je liche') %pokud je to nepravda
+    disp('cislo je liche2') %pokud je to nepravda
+end
+
+
+
+
+
+%dalsi prikazy MATLAB pro praci s vektory a maticemi
+
+%Vytvorime si matici M o rozmeru 2x2 s nahodnymi celymi cisly v rozmezi 1 az 10
+M=round(rand(2)*10)
+
+MT1=transpose(M)   %provedeme transpozici matice M (prevratime prvky okolo hlavni diagonaly) a ulozime di MT1
+
+MT2=M'  %do MT2 ulozime transponovanou matici M s pozitim operatoru apostrof
+%MT1 i MT2 jsou ted totozne
+
+M=[2+2*i;3]  %do matice M ulozime dve komplexni cisla (cislo 3 je prevedeno na komplexni) rozmer 2x1
+
+M'   %transponujeme si matici komplexnich cisel (prevede se na radkovy vektor, v tomto pripade rozmer 1x2
+
+transpose(M)  %totozne co predchozi pouziti
+
+MT1  %vypiseme si matici MT1 aby bylo viodet ze je 2x2 celych cisel
+
+det(MT1)   %vypocet determinantu matice M
+
+
+MM=[2,4;4,8]  %vyrobime si dalsi matici 2x2, zamerne jsou oba radky linearne zavisle 
+
+
+det(MM)  %vypocteme determinant matice MM, coz bude 0
+
+rank(MM)    %vypocteme hodnost matice MM, jelikoz jsou linearne zavisle, bude hodnost matice 1
+
+inv(MT1)    %vypocet inverni matice MT1
+
+MT1*inv(MT1)   %pokud nasobime matici MT1 jeji inverni matici MT1, vysledek bude vzdy jednotkova matice !!!
+
+P=[0:4]  %definujeme si vektor P
+
+length(P)   %zjisteni delky vektoru P
+
+size(MT2)   %zjisteni rozmeru matice MT2, v poradi zde 2 radky a 2 sloupce
+
+a=[4,1:4]  %definujeme si velktor "a" [4     1     2     3     4]
+
+min(a)    %zjisteni minimalni hodnoty ve vektoru "a"
+
+max(a)  %zjisteni maximalni hodnoty ve vektoru "a"
+
+mean(a)  %zjisteni prumerne hodnoty vsech prvku vektoru "a"
+
+median(a)    %zjisteni medianu hodnot vsech prvku vektoru "a"
+
+sort(a)     %setridi prvky vektoru od nejmensiho k nejvetsimu
+
+sort(a,'ascend')  %setridi prvky vektoru od nejmensiho k nejvetsimu
+
+sort(a,'descend')  %setridi prvky vektoru od nejvetsiho k nejmensimu
+
+sum(a)   %secte vsechny prvky vektoru "a"
+
+m=[1:5;6:10]  %definujeme si matici 2x5
+
+sum(m)  %secte hodnoty postupne ve vsech sloupcich a vytvori vektor techto souctu
+
+sum(m,2)  %secte hodnoty postupne ve vsech radcich a vytvori sloupcovy vektor techto souctu
+
+prod(a)  %vynasoby vsechny prvky vektoru "a"
