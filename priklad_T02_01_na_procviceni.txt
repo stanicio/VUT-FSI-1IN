@@ -1,0 +1,68 @@
+o založte m-skript: kresleni.m
+o vykreslete funkci sin() a cos() s parametrizací amplitudy, frekvence a fázového posunu
+o přidejte grid grafu
+o přidejte popis os a nadpis grafu
+o experimentujte
+
+
+----------------------------
+castecne vyplnene pro doplneni
+zkuste pracovat bez divani se na vysledek
+----------------------------
+
+
+clear all
+%konstanty pro graf se sinem
+A1=1; f1=1; phi1=0; %amplituda, frekvence, fazovy posun
+% konstanty pro graf s cosinem
+A2=2; f2=2; phi2=-pi/2; %amplituda, frekvence, fazovy posun
+
+
+%doplnte casova osa t= 100 hodnot od 0 do 1
+t=     
+
+y1=A1*sin(2*pi*f1*t+phi1); %vzorec pro vykresleni grafu sinus
+y2=                        % zmente pro cosinus
+
+%vykreslit graf a obe funkce do jednoho grafu !!
+
+%zapnout mrizku
+
+%nazev grafu
+
+%popis osy x a y
+
+
+
+
+
+
+--------------------------------------
+reseni
+--------------------------------------
+
+
+clear all
+A1=1; f1=1; phi1=0;
+%
+A2=2;
+f2=2;
+phi2=-pi/2;
+
+%casova osa t= 100 hodnot od 0 do 1
+%t=0:0.01:1 %?????? 101 SPATNE
+t=linspace(0,1)
+
+y1=A1*sin(2*pi*f1*t+phi1);
+y2=A2*cos(2*pi*f2*t+phi2);    %cosinus
+
+%vykreslit graf a obe funkce do jednoho grafu
+plot(t,y1,t,y2)
+%zapnout mrizku
+grid on
+%nazev grafu
+title('nazev grafu')
+%popis osy x a y
+xlabel('t[s]')
+ylabel('sin(x), cos(t)')
+
