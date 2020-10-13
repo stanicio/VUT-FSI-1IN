@@ -1,0 +1,54 @@
+%  x +  y = 3
+% -x + 2y = 5
+
+format short % klasicke zobrazeni v kratkem tvaru na 4 desetine mista
+
+%format rational % zobrazeni ve zlomcich, vyzkouset si to
+
+
+%vytvorime si matice dle zadanych rovnic, kdy bereme jen cisla u promennych
+%tak jak jsou zadane
+%prvni radek prvni rovnice, druhy radek druha rovnice
+%na KAZDEM radku musi byt uvedeny vsechny promene i kdyby tam nebyly v rovnici uvedene
+%to by tam pak byla nula
+
+A=[1 1;-1 2]
+
+%a vytvorime si matici pravych stran
+b=[3;5]
+
+A\b   %vyresime soustavu rovnic pomoci deleni zleva (MATLAB umi delit matice)
+
+%nebo, tak jak s eto resi v matematice
+
+inv(A)*b  %vyresime soustavu rovnic , kdy misto deleni pouzijeme nasobeni inverzni matici
+
+%oba zpusoby reseni  JSOU IDENTICKE se stejnym vysledkem!!! zde je dukaz ze
+%se rovnaji
+
+%A\b==inv(A)*b
+
+
+%vystupem reseni rovnic jsou hodnoty promennych dle zadani zde tedy:
+%prvni radek je pro x
+%druhy radek je pro y
+
+%-------------------
+%pokud mame zadani jako radkove vektory, tak musime provest transpozici viz obrazek
+A=[1 1;-1 2]
+
+%a vytvorime si matici pravych stran
+b=[3;5]
+%spocitame, ale pouzijeme transponovane pred vlastnim delenim a i vysledek
+%transponujeme
+
+m=(b'/A')'
+
+%nebo, tak jak se to resi v matematice, ale opet musime transponovat pred
+%nasobenim, ale i vysledek se musi take transponovat
+
+n=(b'*inv(A'))'
+
+
+%pro jistotu, kdy se zapomelo prepnout zpet na spravny format
+format short % klasicke zobrazeni v kratkem tvaru na 4 desetine mista
