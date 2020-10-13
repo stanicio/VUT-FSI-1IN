@@ -1,4 +1,3 @@
-[Včera 18:51] Staněk Kamil (202781)
     
 clear all
 A1=1; f1=1; phi1=0;
