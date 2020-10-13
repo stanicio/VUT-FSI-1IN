@@ -1,0 +1,45 @@
+% MANIPULATOR
+% verze 1: faze polohy manipulatoru
+clear all
+disp('manipulator maticova verze')
+
+% parametry manipulatoru
+n=50; % pocet kroku motoru (kloub)
+L1=1; L2=0.8; % parametry ramen
+
+% zadani #1 (prvni radek kloub 1, druhy radek kloub 2)
+alfa=[linspace(0,180,n)*pi/180; linspace(-90,90,n)*pi/180];
+
+
+% vypocet polohy kloubu a efektoru
+%nachystame si matici pro ukladani bodu ramen a zaroven 1ni radek budou pocatecni body
+x=zeros(3,n);  %nachystame si nulovou matici souradnic x podle poctu ramen
+y=zeros(3,n);  %nachystame si nulovou matici souradnic x podle poctu ramen 
+%prvni radek zustane beze zmeny, bude obsahovat vzdy pocatecni bod vzdy 0,0
+
+%spocitame polohou pro rameno L1 a ulozime do matice x a y na (2hy radek)
+x(2,:)=L1*cos(alfa(1,:)); %spocitame polohou x pro rameno L1 
+y(2,:)=L1*sin(alfa(1,:)); %spocitame polohou y pro rameno L1
+%ted mame v maticich x a y na 2 radku polohy ramene L1
+
+%spocitame si polohu ramene L2 a opet ulozime do matice x a y (3ti radek)
+x(3,:)=L1*cos(alfa(1,:))+L2*cos(alfa(1,:)+alfa(2,:));
+y(3,:)=L1*sin(alfa(1,:))+L2*sin(alfa(1,:)+alfa(2,:));
+%ted mame v maticich x a y na 3 radku polohy ramene L1
+
+% vykresleni polohy druheho kloubu a efektoru
+figure(1), clf  %nachystame si jiny figure a smazeme jeho obsah
+plot(x(2,:),y(2,:),x(3,:),y(3,:)); grid on %vykreslime dve pulkruznice z vektoru
+axis('equal') %zajistime, aby graf byl rovnomerny ctverec dle os
+
+pause % podivat se na graf, ceka se na stlaceni klavesy
+
+% dalsi rozsireni ktere doplni kosmeticke prvky do grafu 
+%vykreslime faze polohy ramene manipulatoru do jineho figure
+figure(2), clf  %nachystame si jiny figure a smazeme jeho obsah
+plot(x,y,'b')   %vykreslime ramena L1 s L2 modre
+hold on         %pozdrzime si figure, aby jsme mohli psat do jednoho grafu
+plot(0,0,'ko','linewidth',5) %zakreslime velkou tecku ve stredu grafu
+plot(x(2,:),y(2,:),'k.')    %vykrelime na konci ramene L1 tecku
+plot(x(3,:),y(3,:),'kd')    %vykrelime na konci ramene L2 diamant
+axis('equal')   %zajistime, aby graf byl rovnomerny ctverec dle os
