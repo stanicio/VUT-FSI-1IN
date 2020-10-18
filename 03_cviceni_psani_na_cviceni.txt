@@ -41,7 +41,7 @@ if a~=1 disp('uvnitr if jsem ted'), end  %podminka je vyhodnocena jako PRAVDA (1
 
 
 %konstrukce IF ELSE
-rnd=round(rand()*10) %vygenerujem si 1 nahodne cislo v rozsahu 1 az 10
+rnd=round(rand()*10) %vygenerujem si 1 nahodne cislo v rozsahu 0 az 10
 if rnd/2==round(rnd/2)  %testujeme zda je vygenerovane cislo delitelne 2 jako cele cislo
     disp('cislo je sude') %pokud je to pravda
 else
