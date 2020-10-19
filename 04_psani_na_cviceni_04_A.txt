@@ -1,0 +1,21 @@
+
+%cviceni 04 zapisky ze cviceni
+
+%% GUI rozhrani
+% zobrazi GUI rozhrani
+% vraci:
+% 1 - prvni tlacitko
+% 2 - druhe tlacitko
+% 0 - pokus se formular zavre bez stlaceni tlacitka
+akce = menu('Zvolte cinnost:','Porovnat pocet','Zvazit')
+
+
+%% INPUT
+% vyzada si od uzivatele zadani hodnoty
+% syntax: NUM = input(PROMPT) % pro numericke zadani
+% syntax: STR = input(PROMPT,'s') % pro textove (string) zadani
+
+% zalozime skript treba "sroubek" pro zadavani ciselnych udaju
+nSroubku=input('Zadej pocet sroubku:');
+nMatic=input('Zadej pocet matic:');
+% a tento script "sroubek" muZeme spustit a vyzkouset zadavani ciselnych hodnot

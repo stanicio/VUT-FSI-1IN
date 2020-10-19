@@ -1,0 +1,24 @@
+%Priklad na vyber barvy pro vykresleni grafu sin(x)
+
+%vymazte prikazove okno a promenne
+
+%vyrobte menu s odpovidajicimi 3mi tlacitky, pro kazdou barvu jedno tlacitko
+volba=
+
+%nachytejte si 100 hodnot x pro osu x v rozsahu 0 az 4 krat pi uzavreny interval
+x=
+
+%pouzijte funkci na vypocet y=sin(x)
+y=
+
+%zadejte vektor barva s prvky ['r','g','b'] pripadne jine vase poradi barev
+barva=
+
+%vykreslete graf s x a y, jedinym prikazem plot s urcenou barvou dle zadani
+%uzivatele co vybral v menu
+plot
+
+
+
+
+% kdo chce poslete vysledny kod do TEAMS CHATU, aspon uvidime, kdo se pripravuje

@@ -1,0 +1,78 @@
+%% vypocet faktorial (max 170!)
+clear all
+clc
+n=input('Vypocet n!, zadejte n= ');
+% od nejmensiho, vypocet FAKTORIAL
+% FAKTORIAL --> "for", dle: n!=1*2*...*(n-1)*n, definovano ze: 0!=1
+fakt=1;  %nachystame si vysledek 1!
+for a=2:n
+    fakt=fakt*a;
+end
+disp(fakt)
+
+
+
+%% od nejvetsiho, vypocet FAKTORIAL
+% FAKTORIAL --> "for", dle: n!=n*(n-1)...2*1, definovano ze: 0!=1
+n=input('Vypocet n!, zadejte n= ');
+fakt=n; %musime nacist n od ktereho se shora bude pocitat faktorial
+if n~=0     %testujeme, zda se nedazadala 0
+    fakt=n;
+else
+    fakt=1;  %byla zadana 0 tak definujeme ze 0!=1
+end
+%pro faktorial {0,1,2} uz ted jsou hodnoty ve "fakt" spravne
+for a=(n-1):-1:2  %vektor se vytvori jedine pokud OD bude 2 a vetsi
+    fakt=fakt*a; %vypocet faktorialu
+end
+disp(fakt)  %zobrazi vypocteny faktorial
+
+
+
+%% FAKTORAL pomoci WHILE (1) Od nejmensiho
+
+% FAKTORIAL --> while, dle: n!=1*2*...*(n-1)*n, definovano ze: 0!=1
+n=input('Vypocet n!, zadejte n= ');
+fakt=1;     %vysledek faktorialu pro {0,1}
+a =1;       %pomocna pro cyklovani, kde bude cislo co se nasobi
+%tento cyklus se provede aspon jednou, pokud bude zadane n>1
+while a<n   %dokud je "a" mensi nez zadanne "n" cyklujeme
+    a=a+1;  %zvedneme kvuli konci cyklovani a vypoctu faktorialu
+    fakt=fakt*a; %spocitame faktorial 
+end
+disp(fakt)  %zobrazime fakltorial
+
+
+
+
+%% FAKTORAL pomoci WHILE (2) Od nejmensiho
+% FAKTORIAL --> while, dle: n!=1*2*...*(n-1)*n, definovano ze: 0!=1
+n=input('Vypocet n!, zadejte n= ');
+fakt=1; %vysledek faktorialu pro {0,1}
+a =2;   %pomocna pro cyklovani, kde bude cislo co se nasobi
+%tento cyklus se provede aspon jednou, pokud bude zadane n=>2
+while a<=n
+    fakt=fakt*a;    %spocitame faktorial 
+    a=a+1;          %zvedneme kvuli konci cyklovani a vypoctu faktorialu
+end
+disp(fakt)      %zobrazime fakltorial
+
+
+
+
+
+%% FAKTORAL pomoci WHILE (3) od nejvetsiho
+% FAKTORIAL --> while, dle: n!=n*(n-1)...2*1, definovano ze: 0!=1
+n=input('Vypocet n!, zadejte n= ');
+if n>0 %ukonci provadeni scriptu pri zaporne hodnote
+    fakt=1;     %vysledek faktorialu pro {0,1}
+    a = n;      %ulozime si nejvetsi cislo ktere mame faktoriovat
+    %pro vsechna kladna cisla provedeme cyklus aspon jednou n>=1
+    while a>0   %cykluj dokud plati podminka
+        fakt=fakt*a;    %spocitame faktorial
+        a=a-1;  %SNIZIME kvuli konci cyklovani a vypoctu faktorialu
+    end
+    disp(fakt)
+else
+    disp('Zadano zaporne cislo!')
+end

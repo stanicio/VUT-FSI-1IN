@@ -1,0 +1,14 @@
+%% IF ELSEIF
+%zadame dve cisla a vysledek relace s temito cisly zobrazime
+
+x=input('x= ');     %zadame hodnotu x z klavesnice
+y=input('y= ');     %zadame hodnotu y z klavesnice
+if x < y            %zjisteni ktere cislo je vetsi
+    disp('x je mensi nez y')  %pokud plati x < y a konec
+elseif x >y     %sem se dostaneme pokud neplati predchozi
+    disp('x vetsi nez y')  %pokud plati x > y a konec
+else
+    disp('x a y tedy musi byt stejne') %plati x==y a konec
+end
+
+

@@ -1,0 +1,26 @@
+% sroubek s podminenym vetvenim CASE SELECT
+nSroub=input('Zadej pocet sroubku: ')
+nMatic=input('Zadej pocet matic: ')
+
+vahaSroub = 0.016; % priklad pro typ sroubu M10x20 v kg
+vahaMatic= 0.012; % priklad pro typ matice M10 v kg
+
+akce = menu('Zvolte cinnost:','Porovnat pocet','Zvazit vse');
+
+switch akce     %promenna dle ktere probiha vyber
+    case 1      %pokud uzivatel zvolil tlacitko 'Porovnat pocet'
+        if nSroub==nMatic %
+            disp('Mame stejne sroubku a stejne matic.')
+        else
+            disp('Pocet sroubku a matic je ruzny.')
+        end
+    case 2 % {2,0}  %pokud uzivatel zvolil tlacitko 'Zvazit vse'
+        %mozno zadavat do slozenych zavorek i vice hodnot pro stejne telo
+        vaha=nSroub*vahaSroub+nMatic*vahaMatic;   %spocitame vahu
+        disp('Vaha srobu a matic [kg]:')
+        disp(vaha)
+    case 3
+        disp('Srouby a matice koupite u Zouzelky s.r.o.')
+    otherwise
+        disp('Okno menu bylo zavreno.')
+end

@@ -1,0 +1,41 @@
+%% cyklus FOR
+for a=1:3  %do vektoru a uloz hodnoty 1 az 3 s krokem 1 (3 hodnoty)
+    a  %vypis obsah promenne a
+end  %vracime se na FOR, pokud dojdou hodnoty v "a" pokracuje se ZA timto prikazem (dalsim radku)
+
+
+
+%% cyklus FOR (2)
+x = rand(1,5);  %vygenerovani vektoru 5ti nahodnych cisel
+n = length(x);  % ureceni delky promenne x (pocet prvku)
+xSum = 0;       %vynulujeme si promennou pro dalsi pricitani od 0
+for a=1:n       %cyklujeme tolikrat kolik je prvku v x
+    xSum = xSum + x(a);  %vzdy pricteme jednu nahodnou hodnotu z vektoru x na pozici i
+end  % vracime se na zacatek cyklu, pokud cyklus nema dalsi prvky, pokracujeme za timto prikazem
+xSum    %vypise soucet vsech vygenerovanych cisle
+xSum/n  %zjisti prumernou hodnotu vygenerovanych cisel a vypise
+
+
+
+
+%% cyklus WHILE "cyklus s podmínkou na začátku"
+A=3;
+while A>0   %cykluj dokud plati ze A>0
+    disp(A) %prikazy tela cyklu
+    A=A-1;  %snizime si promennou A
+end %pokud podminka prestane platit skoc sem a pokracuj na dalsim radku (prikazu)
+disp('konec')
+
+
+
+%% jiny While (2)
+xSum=0;
+a=1;
+x = rand(1,5);  %vygenerovani vektoru 5ti nahodnych cisel
+while n>=a
+    xSum=xSum+x(a);
+    a=a+1;
+end
+sum(x)
+xSum
+xp=xSum/n

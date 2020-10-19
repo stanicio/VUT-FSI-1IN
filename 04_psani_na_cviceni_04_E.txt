@@ -1,0 +1,19 @@
+%% prikazy BREAK a CONTINUE
+disp('* Zadavej cisla a ja je budu scitat *')
+% -1 konci, jina zaporna jsou ignorovana
+
+c=1; s=0;       %nachystani promennych
+while 1 % ? co se stane kdyz bude radek: while c==1
+    a=input('Zadej cislo: ');   %vstup cisla od uzivatele
+    %testovani ukonceni cyklovani
+    if a==-1    %testujeme, zda mame skoncit s citanim
+        break   %pokud ano, koncime cely cyklus While
+    end
+    %testovani zda zadane cislo je zaporne
+    if a<0          %pokud je "a" zaporne cislo nebude ho scitat
+        continue    %v tom pripade se vracime na radek kde je prikaz While
+    end
+    %otazka, muzeme tyto dva IF prikazy mezi sebou prohodit?
+    s=s+a %zadane cislo pricteme
+end
+disp('soucet zadanych cisel je: '), disp(s)

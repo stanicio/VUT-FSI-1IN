@@ -1,0 +1,20 @@
+nSroub=input('Zadej pocet sroubku: ')
+nMatic=input('Zadej pocet matic: ')
+akce = menu('Akce:','Porovnat pocet','Zvazit vse','info');
+vahaSroub = 0.016; % priklad pro typ sroubu M10x20 v kg
+vahaMatic= 0.012; % priklad pro typ matice M10 v kg
+if akce==1  %pokud uzivatel zvolil tlacitko 'Porovnat pocet'
+    if nSroub==nMatic
+        disp('Mame stejne sroubku a stejne matic.')
+    else
+        disp('Pocet sroubku a matic je ruzny.')
+    end
+elseif akce==2  %pokud uzivatel zvolil tlacitko 'Zvazit vse'
+    vaha=nSroub * vahaSroub + nMatic * vahaMatic; %spocitame vahu
+    disp('Vaha sroubu a matic [kg]: ') %vypiseme radek textu NEODRADKUJE
+    disp(vaha)
+elseif akce==3
+    disp('Šrouby a matice koupíte v Šroubárna Kyjov')
+else
+    disp('Okno menu bylo zavřeno. :o( ')
+end
