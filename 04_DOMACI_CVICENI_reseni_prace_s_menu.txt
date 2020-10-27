@@ -1,0 +1,51 @@
+%Priklad na vyber barvy pro vykresleni grafu sin(x)
+
+%vymazte prikazaove okno a promenne
+
+%vyrobte menu s odpovidajicimi 3mi tlacitky, pro kazdou barvu jedno tlacitko
+volba=
+
+%nachytejte si 100 hodnot x pro osu x v rozsahu 0 az 4 krat pi uzavreny interval
+x=
+
+%pouzijte funkci na vypocet y=sin(x)
+y=
+
+%zadejte vektor barva s prvky ['r','g','b'] pripadne jine vase poradi barev
+barva=
+
+%vykreslete graf s x a y, jedinym prikazem plot s urcenou barvou dle zadani
+%uzivatele co vybral v menu
+plot
+
+
+
+%% mozne RESENI
+volba=menu('vyberte barvu','red','green','blue');
+x=linspace(0,4*pi);  %nachystame si x souradnice
+y=sin(x); %spocitane hodnotu y v bode x
+color=['r','g','b']; %nachystame si vektor se znaky barev pro plot
+plot(x,y,color(volba)) 
+%vykreslime graf a vyber barvy vyresime indexovanim prvku vektoru
+%dle vraceneho stlaceneho tlacitka (1 az 3)
+
+
+%% alternativa, ktera resi i zavrene okno (toto je mimo zadani)
+%zadny IF se NEPOUZIL ;o)
+%Princpielne, jde o stejny kod, jen je nutne vyresit navratovou hodnotu ve
+%"volba" zde se pri zavrenem okne objevi cislo 0.
+%jde to vyresit i bez pouziti IF nebot vyuzijeme vlastnosti vektoru pri
+%indexovani prvku.
+%rozdil je v tom, ze si musime upravit vektor se zdrojem barev o cernou na
+%pozici cislo 1 a zbyle barvy posuneme o jednu vice.
+%vyber z indexu pak vzdy zvysime o 1 a tim mame osestreny i stav s vracenou
+%nulou. :o)
+
+volba=menu('vyberte barvu','red','green','blue');
+x=linspace(0,4*pi);  %nachystame si x souradnice
+y=sin(x); %spocitane hodnotu y v bode x
+color=['k','r','g','b']; %nachystame si vektor se znaky barev pro plot i pro nulu
+plot(x,y,color(volba+1)) 
+%vykreslime graf a vyber barvy vyresime indexovanim prvku vektoru
+%dle vraceneho stlaceneho tlacitka (1 az 3) ale posunutim o 1 muzeme
+%adresovat vyber i pro hodnotu zavreneho okna
