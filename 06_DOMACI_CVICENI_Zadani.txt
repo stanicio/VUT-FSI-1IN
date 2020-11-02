@@ -1,0 +1,10 @@
+
+
+%vytvorte m-script, ktery provede reseni zadane soustavy rovnic
+%nakrelete i graficke reseni soustavy linearnich rovnic. 
+%prezentujte graficky na grafu 0 az 4 pro osu x s krokem 0.1
+%bod pruniku bude modre kolecko, zapnuta mrizka
+%  x + y = 4      %primka kreslena zelene plnou carou
+% 2x - y = 5      %primka kreslena modre prerusovanou carou
+%graf doplnte o popisy a legendou uvnitr grafu co nebude zasahovat do
+%vyobrazeni
